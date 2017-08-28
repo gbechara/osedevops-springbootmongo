@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import com.tests4geeks.tutorials.model.Car;
+import osedevops.group.springbootmongo.model.Car;
 
 @Repository
 public class CarSearchRepository {
