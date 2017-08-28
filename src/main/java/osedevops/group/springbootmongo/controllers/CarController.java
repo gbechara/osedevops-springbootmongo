@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.tests4geeks.tutorials.model.Car;
-import com.tests4geeks.tutorials.repository.CarMongoRepository;
+import .model.Car;
+import osedevops.group.springbootmongo.repository.CarMongoRepository;
 
 @Controller
 public class CarController {
