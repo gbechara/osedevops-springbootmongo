@@ -21,6 +21,11 @@ public class CarController {
     @Autowired
     CarSearchRepository carSearchRepository;
 
+    @RequestMapping("/")
+    public String home() {
+        return "redirect:home";
+    }
+    
     @RequestMapping("/home")
     public String home(Model model) {
         model.addAttribute("carList", carRepository.findAll());
