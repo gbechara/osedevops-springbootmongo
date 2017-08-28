@@ -5,4 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 import osedevops.group.springbootmongo.model.Car;
 
 
-public interface CarMongoRepository extends CrudRepository{}
+public interface CarMongoRepository extends CrudRepository<Car, String>{}
