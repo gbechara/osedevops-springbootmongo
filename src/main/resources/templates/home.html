@@ -33,10 +33,13 @@
         <br />
         <h2>Add Car</h2>
         <form action="/addCar" method="POST">
-            Make <input type="text" id="make" name="make" /><br />
-            Model <input type="text" id="model" name="model" /><br />
-            Description <textarea rows="5" cols="70" id="description" name="description" /><br />
+            <table>
+            <tr> <td>Make </td><td><input type="text" id="make" name="make" /></td></tr>
+            <tr> <td>Model </td><td><input type="text" id="model" name="model" /></td></tr>
+            <tr> <td> Description </td><td><textarea rows="5" cols="70" id="description" name="description" /></td></tr>
             <input type="submit" />
+            
+            </table>
         </form>
         <h2>Search for cars</h2>
         <form action="/search" method="GET">
