@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>MongoDB/Spring Boot tutorial from tests4geeks.com</title>
-        <link href="/resources/css/responstable.css" />
+        <link href="/css/responstable.css" />
     </head>
     <body>
         <h2>List Cars</h2>
@@ -31,13 +31,13 @@
                <tr><td>Model </td><td><input type="text" id="model" name="model" /></td></tr>
                <tr><td>Year </td><td><input type="text" id="year" name="year" /></td></tr>
                <tr><td> Description </td><td><textarea rows="5" cols="70" id="description" name="description" /></td></tr>
-               <tr><td> Description </td><td> <input type="submit" /></td></tr>
+               <tr><td> </td><td> <input type="submit" /></td></tr>
             </table>
         </form>
         <h2>Search for cars</h2>
         <form action="/search" method="GET">
             <input type="text" name="search" id="search" th:value="${search}" />
-            <input type="submit" value="Search" />
+            <input type="submit" value="search" />
         </form>
     </body>
 </html>
