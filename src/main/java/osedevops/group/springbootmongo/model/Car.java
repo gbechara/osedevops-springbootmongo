@@ -11,6 +11,8 @@ public class Car {
     
     private String model;
     
+    private Integer year;
+    
     private String description;
     
     public Car() {}
