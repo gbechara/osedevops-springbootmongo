@@ -1,9 +1,10 @@
 <html>
     <head>
         <title>MongoDB/Spring Boot tutorial from tests4geeks.com</title>
+        <link rel="stylesheet" href="responstable.css">
         <style>
             table, th, td {
-                border: 1px solid black;
+                border: 0.5px solid black;
                 border-spacing: 0px;
             }
         th, td {
@@ -12,7 +13,8 @@
         </style>
     </head>
     <body>
-        <table>
+        <h2>List Cars</h2>
+        <table class="responstable">
             <thead>
                 <tr>
                     <th>Make</th>
@@ -26,6 +28,7 @@
                     <td th:text="${car.make}"></td>
                     <td th:text="${car.model}"></td>
                     <td th:text="${car.description}"></td>
+                    <td th:text="${car.year}"></td>
                     <td></td>
                 </tr>
             </tbody>
@@ -33,12 +36,11 @@
         <br />
         <h2>Add Car</h2>
         <form action="/addCar" method="POST">
-            <table>
-            <tr> <td>Make </td><td><input type="text" id="make" name="make" /></td></tr>
-            <tr> <td>Model </td><td><input type="text" id="model" name="model" /></td></tr>
-            <tr> <td> Description </td><td><textarea rows="5" cols="70" id="description" name="description" /></td></tr>
-            <input type="submit" />
-            
+            <table class="responstable">
+               <tr><td>Make </td><td><input type="text" id="make" name="make" /></td></tr>
+               <tr><td>Model </td><td><input type="text" id="model" name="model" /></td></tr>
+               <tr><td> Description </td><td><textarea rows="5" cols="70" id="description" name="description" /></td></tr>
+               <tr><td> Description </td><td> <input type="submit" /></td></tr>
             </table>
         </form>
         <h2>Search for cars</h2>
