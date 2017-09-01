@@ -16,6 +16,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
 import java.utils.Collections;
+import java.utils.List;
+
 
 @Controller
 public class CarController {
