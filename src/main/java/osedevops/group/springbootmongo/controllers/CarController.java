@@ -59,4 +59,9 @@ public class CarController {
 		return Collections.singletonList(car);
 	}
 
+    public String getFallback(Model model) {
+        return "Cars not available";
+    }
+
+    
 }
