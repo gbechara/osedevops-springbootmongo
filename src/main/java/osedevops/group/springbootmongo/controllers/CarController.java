@@ -12,6 +12,9 @@ import osedevops.group.springbootmongo.model.Car;
 import osedevops.group.springbootmongo.repository.CarMongoRepository;
 import osedevops.group.springbootmongo.repository.CarSearchRepository;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+
 @Controller
 public class CarController {
 
@@ -27,6 +30,7 @@ public class CarController {
     }
     
     @RequestMapping("/home")
+    @HystrixCommand(groupKey="ListCars", fallbackMethod = "getFallback")
     public String home(Model model) {
         model.addAttribute("carList", carRepository.findAll());
         return "home";
