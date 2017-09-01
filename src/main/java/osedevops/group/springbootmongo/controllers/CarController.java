@@ -15,6 +15,8 @@ import osedevops.group.springbootmongo.repository.CarSearchRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
+import java.utils.Collections;
+
 @Controller
 public class CarController {
 
