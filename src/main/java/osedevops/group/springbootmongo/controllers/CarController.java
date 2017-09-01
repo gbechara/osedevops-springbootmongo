@@ -48,5 +48,11 @@ public class CarController {
         model.addAttribute("search", search);
         return "home";
     }
+    
+    public List<Car> getFallback(Integer StartPosition, Integer maxResult) {
+		Car car = new Car();
+		car.setModel("Fallback");
+		return Collections.singletonList(car);
+	}
 
 }
