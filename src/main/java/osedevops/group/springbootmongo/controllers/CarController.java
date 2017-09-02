@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
 import osedevops.group.springbootmongo.model.Car;
 import osedevops.group.springbootmongo.repository.CarMongoRepository;
 import osedevops.group.springbootmongo.repository.CarSearchRepository;
@@ -19,7 +23,8 @@ import java.util.Collections;
 import java.util.List;
 
 
-@Controller
+//@Controller
+@RestController
 public class CarController {
 
     @Autowired
