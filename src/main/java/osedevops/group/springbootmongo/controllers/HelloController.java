@@ -22,6 +22,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import java.util.Collections;
 import java.util.List;
 
+@Autowired
+private io.opentracing.Tracer tracer;
 
 @RestController
 public class HelloController {
@@ -32,6 +34,7 @@ public class HelloController {
     
     @RequestMapping("/simple")
     public String home() {
+        tracer.activeSpan().setBaggageItem("transaction", "simple");
         return "Hello Demo";
     }
     
