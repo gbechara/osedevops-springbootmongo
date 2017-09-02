@@ -32,6 +32,9 @@ public class CarController {
 
     @Autowired
     CarSearchRepository carSearchRepository;
+    
+    @Autowired
+    private RestTemplate restTemplate;
 
     @RequestMapping("/")
     public String home() {
