@@ -31,7 +31,7 @@ public class SpringbootmongoApplication {
         return restTemplateBuilder.build();
     }
     
-    @Bean
+//    @Bean
 	public io.opentracing.Tracer jaegerTracer() {
         System.out.println("---------------- jaegerTracer");
         return new Configuration("spring-boot", new Configuration.SamplerConfiguration(ProbabilisticSampler.TYPE, 1),
@@ -57,6 +57,7 @@ public class SpringbootmongoApplication {
 
     
 	public static void main(String[] args) {
+        GlobalTracer.register(jaegerTracer);
 		SpringApplication.run(SpringbootmongoApplication.class, args);
 	}
 }
