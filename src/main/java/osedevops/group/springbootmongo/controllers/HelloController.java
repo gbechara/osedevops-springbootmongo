@@ -23,59 +23,23 @@ import java.util.Collections;
 import java.util.List;
 
 
-@Controller
-//@RestController
-public class CarController {
-
-    @Autowired
-    CarMongoRepository carRepository;
-
-    @Autowired
-    CarSearchRepository carSearchRepository;
+@RestController
+public class HelloController {
+    
     
     @Autowired
     private RestTemplate restTemplate;
-
-/*    @RequestMapping("/")
+    
+    @RequestMapping("/")
     public String home() {
         return "redirect:home";
-    }*/
-    
-    @RequestMapping("/home")
-    @HystrixCommand(groupKey="ListCars", fallbackMethod = "getFallback")
-    public String home(Model model) {
-        model.addAttribute("carList", carRepository.findAll());
-        return "home";
     }
-
-/*    @RequestMapping("/chaining")
+    
+    @RequestMapping("/chaining")
     public String chaining() {
         ResponseEntity<String> response = restTemplate.getForEntity("/hello", String.class);
         return "Chaining + " + response.getBody();
-    }*/
-    
-    @RequestMapping(value = "/addCar", method = RequestMethod.POST)
-    public String addCar(@ModelAttribute Car car) {
-        carRepository.save(car);
-        return "redirect:home";
-    }
-
-    @RequestMapping(value = "/search")
-    public String search(Model model, @RequestParam String search) {
-        model.addAttribute("carList", carSearchRepository.searchCars(search));
-        model.addAttribute("search", search);
-        return "home";
     }
     
-    public List<Car> getFallback(Integer StartPosition, Integer maxResult) {
-		Car car = new Car();
-		car.setModel("Fallback");
-		return Collections.singletonList(car);
-	}
-
-    public String getFallback(Model model) {
-        return "Cars not available";
-    }
-
     
 }
