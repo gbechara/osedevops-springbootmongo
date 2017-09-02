@@ -57,7 +57,7 @@ public class SpringbootmongoApplication {
 
     
 	public static void main(String[] args) {
-        GlobalTracer.register(jaegerTracer);
+        GlobalTracer.register(jaegerTracer());
 		SpringApplication.run(SpringbootmongoApplication.class, args);
 	}
 }
