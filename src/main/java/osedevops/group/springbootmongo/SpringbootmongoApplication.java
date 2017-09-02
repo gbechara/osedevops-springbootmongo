@@ -33,7 +33,7 @@ public class SpringbootmongoApplication {
     
     @Bean
 	public io.opentracing.Tracer jaegerTracer() {
-        System.out.log("---------------- jaegerTracer");
+        System.out.println("---------------- jaegerTracer");
         return new Configuration("spring-boot", new Configuration.SamplerConfiguration(ProbabilisticSampler.TYPE, 1),
 				new Configuration.ReporterConfiguration(false, "jaeger-collector", 14267, 1000, 10000))
 				.getTracer();
