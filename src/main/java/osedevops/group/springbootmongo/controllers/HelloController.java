@@ -30,14 +30,14 @@ public class HelloController {
     @Autowired
     private RestTemplate restTemplate;
     
-    @RequestMapping("/")
+    @RequestMapping("/simple")
     public String home() {
-        return "redirect:home";
+        return "Hello Demo";
     }
     
     @RequestMapping("/chaining")
     public String chaining() {
-        ResponseEntity<String> response = restTemplate.getForEntity("/hello", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("/simple", String.class);
         return "Chaining + " + response.getBody();
     }
     
