@@ -16,6 +16,9 @@ import com.uber.jaeger.samplers.ProbabilisticSampler;
 import brave.Tracing;
 import brave.opentracing.BraveTracer;
 import brave.sampler.Sampler;
+
+import io.opentracing.contrib.global.GlobalTracer;
+
 import zipkin.Span;
 import zipkin.reporter.AsyncReporter;
 import zipkin.reporter.Encoding;
