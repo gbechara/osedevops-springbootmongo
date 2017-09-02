@@ -40,6 +40,12 @@ public class CarController {
         return "home";
     }
 
+/*    @RequestMapping("/chaining")
+    public String chaining() {
+        ResponseEntity<String> response = restTemplate.getForEntity("/hello", String.class);
+        return "Chaining + " + response.getBody();
+    }*/
+    
     @RequestMapping(value = "/addCar", method = RequestMethod.POST)
     public String addCar(@ModelAttribute Car car) {
         carRepository.save(car);
