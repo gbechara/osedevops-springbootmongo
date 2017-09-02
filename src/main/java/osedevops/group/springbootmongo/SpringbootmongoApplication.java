@@ -24,6 +24,11 @@ import zipkin.reporter.okhttp3.OkHttpSender;
 public class SpringbootmongoApplication {
 
     @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
+        return restTemplateBuilder.build();
+    }
+    
+    @Bean
 	public io.opentracing.Tracer jaegerTracer() {
 		return new Configuration("spring-boot", new Configuration.SamplerConfiguration(ProbabilisticSampler.TYPE, 1),
 				new Configuration.ReporterConfiguration(false, "jaeger-collector", 14267, 1000, 10000))
