@@ -37,7 +37,7 @@ public class HelloController {
     
     @RequestMapping("/chaining")
     public String chaining() {
-        ResponseEntity<String> response = restTemplate.getForEntity("http://springboot-mongo-gluster-demo:8080/simple", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity("http://springboot-mongo-gluster-demo.cloudapps.example.com/simple", String.class);
         return "Chaining + " + response.getBody();
     }
     
